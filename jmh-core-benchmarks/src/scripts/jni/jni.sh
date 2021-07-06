@@ -42,7 +42,7 @@ case "$OS" in
         exit 1
 esac
 
-${JAVA_HOME}/bin/javac -cp ${JMH_HOME}/target/benchmarks.jar -h . ${JMH_HOME}/src/main/java/compiler/JNI.java
-gcc -fPIC -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OS_NAME} -shared -o ${LIB_NAME} ${JMH_HOME}/src/scripts/jni/jni.c
+# ${JAVA_HOME}/bin/javac -cp ${JMH_HOME}/jmh-core-benchmarks/target/benchmarks.jar -h . ${JMH_HOME}/jmh-core-benchmarks/src/main/java/compiler/JNI.java
+gcc -fPIC -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OS_NAME} -shared -o ${LIB_NAME} ${JMH_HOME}/jmh-core-benchmarks/src/scripts/jni/jni.c
 
-${JAVA_HOME}/bin/java -jar ${JMH_HOME}/target/benchmarks.jar -jvmArgsAppend -Djava.library.path=`pwd` compiler.JNI
+${JAVA_HOME}/bin/java -jar ${JMH_HOME}/jmh-core-benchmarks/target/benchmarks.jar -jvmArgsAppend -Djava.library.path=`pwd` compiler.JNI

@@ -22,6 +22,7 @@
  * or visit www.oracle.com if you need additional information or have any
  * questions.
  */
-#include "jni.h"
+#include <jni.h>
+#include "compiler_JNI_JNICall.h"
 
 JNIEXPORT void JNICALL Java_compiler_JNI_00024JNICall_foo(JNIEnv *env, jobject thisObject) {}
